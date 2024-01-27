@@ -1,5 +1,11 @@
+import fs from 'node:fs';
+
 const remove = async () => {
-    // Write your code here 
+    const fileName = 'src/fs/files/fileToRemove.txt';
+    if (!fs.existsSync(fileName)) {
+        throw 'FS operation failed';
+    }
+    fs.rmSync(fileName);
 };
 
 await remove();
